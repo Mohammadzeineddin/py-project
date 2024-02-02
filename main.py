@@ -61,17 +61,6 @@ def index():
                 margin-top: 10px;
                 text-align: center;
             }
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
-}
-
         </style>
     </head>
     <body>
@@ -108,13 +97,7 @@ footer p {
                 </div>
             </div>
         </div>
-        <p style="position:fixed;bottom:0;">&#169; COPYRIGHTS 2024 MZ</p>
-<footer>
-    <div class="container">
-        <p>&#169;2024 MM. All rights reserved.</p>
-    </div>
-</footer>
-
+        <p style="position:fixed;bottom:0;">&#169; COPYRIGHTS 2024 MM</p>
     </body>
     </html>
     """
@@ -196,17 +179,6 @@ def favorites():
         border-radius: 5px;
         margin-top: 10px;
     }
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
-}
-
 </style>
     </head>
     <body>
@@ -353,11 +325,7 @@ footer p {
                 {% endif %}
             </div>
         </div>
-        <footer>
-    <div class="container">
-        <p>&#169;2024 MM. All rights reserved.</p>
-    </div>
-</footer>
+         <p>&#169;2024 MM. All rights reserved.</p>
     </body>
     </html>
     """

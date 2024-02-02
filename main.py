@@ -325,7 +325,7 @@ def favorites():
                 {% endif %}
             </div>
         </div>
-         <p>&#169;2024 MM. All rights reserved.</p>
+        <p style="position:fixed;bottom:0;">&#169; COPYRIGHTS 2024 MM</p>
     </body>
     </html>
     """

@@ -97,6 +97,7 @@ def index():
                 </div>
             </div>
         </div>
+        <p style="position:fixed;bottom:0;">&#169; COPYRIGHTS 2024 MZ</p>
     </body>
     </html>
     """
@@ -324,6 +325,7 @@ def favorites():
                 {% endif %}
             </div>
         </div>
+        <p style="position:fixed;bottom:0;">&#169; COPYRIGHTS 2024 MZ</p>
     </body>
     </html>
     """

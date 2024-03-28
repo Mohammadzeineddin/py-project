@@ -71,27 +71,27 @@ def index():
             <h1 class="my-5">{{ title }}</h1>
             <div class="row justify-content-center">
                 <div class="col-md-4 mb-4">
-                    <a href=" mawaket.html " target="_blank" class="btn btn-primary btn-block">مواقيت الصلاة</a>
+                    <a href=" mawaket.html " class="btn btn-primary btn-block">مواقيت الصلاة</a>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-4 mb-4">
-                    <a href="zekr.html" target="_blank" class="btn btn-primary btn-block">الذكر</a>
+                    <a href="zekr.html" class="btn btn-primary btn-block">الذكر</a>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-4 mb-4">
-                    <a href="aswat.html" target="_blank" class="btn btn-primary btn-block">الأصوات</a>
+                    <a href="aswat.html" class="btn btn-primary btn-block">الأصوات</a>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-4 mb-4">
-                    <a href="favorites.html" target="_blank" class="btn btn-primary btn-block">المفضلة</a>
+                    <a href="favorites.html" class="btn btn-primary btn-block">المفضلة</a>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-4 mb-4">
-                    <a href="masb7a.html"target="_blank" class="btn btn-primary btn-block">المسبحة</a>
+                    <a href="masb7a.html" class="btn btn-primary btn-block">المسبحة</a>
                 </div>
             </div>
         </div>
@@ -667,7 +667,7 @@ button:hover {
     <span id="allahuakbarCounter">0</span>
 </div>
 
-<button onclick="resetCounters()">Reset Counters</button>
+<button onclick="resetCounters()">اعادة ضبط</button>
 
 <script>
     // Function to increment the counter for the specified button

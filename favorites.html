@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background: url("/static/masjed-img.jpg") no-repeat center center fixed;
+        background-size: cover;
+        margin: 0; /* Remove default margin */
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 50px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .btn {
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="my-5">تحديد المفضلة</h1>
+      <form method="post" action="{{ url_for('favorites') }}">
+        {% for sowar in ["سورة الفاتحة", "سورة البقرة", "سورة آل عمران", "سورة
+        النساء", "سورة الأنعام"] %}
+        <div class="form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="{{ loop.index }}"
+            name="sowars"
+            value="{{ sowar }}"
+          />
+          <label class="form-check-label" for="{{ loop.index }}"
+            >{{ sowar }}</label
+          >
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary btn-block">حفظ</button>
+      </form>
+    </div>
+  </body>
+</html>

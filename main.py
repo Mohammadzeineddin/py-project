@@ -179,154 +179,126 @@ def favorites():
     }
 </style>
     </head>
-    <body>
-        <div class="container">
-            <div class="main-content">
-                <h1 class="my-5">تحديد المفضلة</h1>
-                   <form method="post" action="" style="display: flex; flex-wrap: wrap; max-height: 600px; overflow-y: auto;"">
-        {% for sowar in [ 
-"الفاتحة",
-        "البقرة",
-        "آل عمران",
-        "النساء",
-        "المائدة",
-        "الأنعام",
-        "الأعراف",
-        "الأنفال",
-        "التوبة",
-        "يونس",
-        "هود",
-        "يوسف",
-        "الرعد",
-        "إبراهيم",
-        "الحجر",
-        "النحل",
-        "الإسراء",
-        "الكهف",
-        "مريم",
-        "طه",
-        "الأنبياء",
-        "الحج",
-        "المؤمنون",
-        "النّور",
-        "الفرقان",
-        "الشعراء",
-        "النمل",
-        "القصص",
-        "العنكبوت",
-        "الرّوم",
-        "لقمان",
-        "السجدة",
-        "الأحزاب",
-        "سبإ",
-        "فاطر",
-        "يس",
-        "الصافات",
-        "ص",
-        "الزمر",
-        "غافر",
-        "فصّلت",
-        "الشورى",
-        "الزخرف",
-        "الدّخان",
-        "الجاثية",
-        "الأحقاف",
-        "محمد",
-        "الفتح",
-        "الحجرات",
-        "ق",
-        "الذاريات",
-        "الطور",
-        "النجم",
-        "القمر",
-        "الرحمن",
-        "الواقعة",
-        "الحديد",
-        "المجادلة",
-        "الحشر",
-        "الممتحنة",
-        "الصف",
-        "الجمعة",
-        "المنافقون",
-        "التغابن",
-        "الطلاق",
-        "التحريم",
-        "الملك",
-        "القلم",
-        "الحاقة",
-        "المعارج",
-        "نوح",
-        "الجن",
-        "المزّمّل",
-        "المدّثر",
-        "القيامة",
-        "الإنسان",
-        "المرسلات",
-        "النبأ",
-        "النازعات",
-        "عبس",
-        "التكوير",
-        "الإنفطار",
-        "المطفّفين",
-        "الإنشقاق",
-        "البروج",
-        "الطارق",
-        "الأعلى",
-        "الغاشية",
-        "الفجر",
-        "البلد",
-        "الشمس",
-        "الليل",
-        "الضحى",
-        "الشرح",
-        "التين",
-        "العلق",
-        "القدر",
-        "البينة",
-        "الزلزلة",
-        "العاديات",
-        "القارعة",
-        "التكاثر",
-        "العصر",
-        "الهمزة",
-        "الفيل",
-        "قريش",
-        "الماعون",
-        "الكوثر",
-        "الكافرون",
-        "النصر",
-        "المسد",
-        "الإخلاص",
-        "الفلق",
-        "الناس" ] %}
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="{{ loop.index }}" name="sowars" value="{{ sowar }}" {% if sowar in selected_sowars %}checked{% endif %}>
-            <label class="form-check-label {% if sowar in selected_sowars %}selected-sowar{% endif %}" for="{{ loop.index }}">{{ sowar }}</label>
-        </div>
-        {% endfor %}
-         <div style="margin-top:50px; margin-left:50px;">
-        <button type="submit" class="btn btn-primary mt-3" style="margin-top: px;">حفظ</button>
-    </div>
-    </form>
-            </div>
-
-            <div class="sidebar">
-                {% if selected_sowars %}
-                <div class="selected-sowar-box">
-                    <h2 class="mb-3">المفضلة:</h2>
-                    <ul class="list-group">
-                        {% for sowar in selected_sowars %}
-                        <li class="list-group-item selected-sowar">{{ sowar }}</li>
-                        {% endfor %}
-                    </ul>
+   <body>
+    <div class="container">
+        <div class="main-content">
+            <h1 class="my-5">تحديد المفضلة</h1>
+            <form method="post" action="" style="display: flex; flex-wrap: wrap; max-height: 600px; overflow-y: auto;">
+                {% for sowar in [
+                    "الفاتحة", "البقرة", "آل عمران", "النساء", "المائدة", "الأنعام", "الأعراف", "الأنفال", "التوبة", "يونس", "هود", "يوسف", "الرعد", "إبراهيم", "الحجر", "النحل", "الإسراء", "الكهف", "مريم", "طه", "الأنبياء", "الحج", "المؤمنون", "النّور", "الفرقان", "الشعراء", "النمل", "القصص", "العنكبوت", "الرّوم", "لقمان", "السجدة", "الأحزاب", "سبإ", "فاطر", "يس", "الصافات", "ص", "الزمر", "غافر", "فصّلت", "الشورى", "الزخرف", "الدّخان", "الجاثية", "الأحقاف", "محمد", "الفتح", "الحجرات", "ق", "الذاريات", "الطور", "النجم", "القمر", "الرحمن", "الواقعة", "الحديد", "المجادلة", "الحشر", "الممتحنة", "الصف", "الجمعة", "المنافقون", "التغابن", "الطلاق", "التحريم", "الملك", "القلم", "الحاقة", "المعارج", "نوح", "الجن", "المزّمّل", "المدّثر", "القيامة", "الإنسان", "المرسلات", "النبأ", "النازعات", "عبس", "التكوير", "الإنفطار", "المطفّفين", "الإنشقاق", "البروج", "الطارق", "الأعلى", "الغاشية", "الفجر", "البلد", "الشمس", "الليل", "الضحى", "الشرح", "التين", "العلق", "القدر", "البينة", "الزلزلة", "العاديات", "القارعة", "التكاثر", "العصر", "الهمزة", "الفيل", "قريش", "الماعون", "الكوثر", "الكافرون", "النصر", "المسد", "الإخلاص", "الفلق", "الناس"
+                ] %}
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="{{ loop.index }}" name="sowars" value="{{ sowar }}" {% if sowar in selected_sowars %}checked{% endif%}>
+                        <label class="form-check-label {% if sowar in selected_sowars %}selected-sowar{% endif %}" for="{{ loop.index }}">{{ sowar }}</label>
+                    </div>
+                {% endfor %}
+                <div style=" margin-left:50px;">
+                    <button type="submit" class="btn btn-primary mt-3" style="width:100px;margin-right:600px;height:50px;" onclick="addToFavorites()">حفظ</button>
                 </div>
-                {% endif %}
-            </div>
+            </form>
+            <table id="favoritesTable" class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">السورة</th>
+                        <th scope="col">حذف</th>
+                    </tr>
+                </thead>
+                <tbody id="favoritesTableBody">
+                
+                </tbody>
+            </table>
         </div>
-        <p style="position:fixed;bottom:0;">&#169; COPYRIGHTS 2024 MM</p>
-    </body>
+    </div>
+    <!-- Button to return to the homepage -->
+    <a href="{{ url_for('index') }}" class="btn btn-primary" style="position: fixed; bottom: 10px; right:20px;width:200px;">الرجوع</a>
+
+    <p style="position:fixed;bottom:0;">&#169; COPYRIGHTS 2024 MMA</p>
+</body>
+ <script>
+        function addToFavorites() {
+            const form = document.querySelector("form");
+            const favoritesTableBody = document.querySelector("#favoritesTableBody");
+            const selectedSowars = new Set();
+            
+            // Collect all selected suras
+            for (const checkbox of form.elements.sowars) {
+                if (checkbox.checked) {
+                    selectedSowars.add(checkbox.value);
+                }
+            }
+            
+            // Remove unchecked suras from the table
+            for (const row of favoritesTableBody.querySelectorAll("tr")) {
+                const sowar = row.dataset.sowar;
+                if (!selectedSowars.has(sowar)) {
+                    row.remove();
+                    // Uncheck checkbox associated with removed surah
+                    const checkbox = document.querySelector(`input[name="sowars"][value="${sowar}"]`);
+                    if (checkbox) {
+                        checkbox.checked = false;
+                    }
+                }
+            }
+            
+            // Add new selected suras to the table
+            let index = 1;
+            for (const sowar of selectedSowars) {
+                const existingRow = favoritesTableBody.querySelector(`tr[data-sowar="${sowar}"]`);
+                if (!existingRow) {
+                    const row = document.createElement("tr");
+                    row.dataset.sowar = sowar;
+                    row.innerHTML = `
+                        <th scope="row">${index}</th>
+                        <td>${sowar}</td>
+                        <td>
+                            <button type="button" class="btn btn-danger" style="width:100px;height:50px;" onclick="deleteRow('${sowar}')">حذف</button>
+                        </td>
+                    `;
+                    favoritesTableBody.appendChild(row);
+                }
+                index++;
+            }
+
+            // Save selected surahs to local storage
+            const selectedSowarsArray = Array.from(selectedSowars);
+            localStorage.setItem('selectedSowars', JSON.stringify(selectedSowarsArray));
+        }
+
+        function deleteRow(sowar) {
+            const row = document.querySelector(`#favoritesTableBody tr[data-sowar="${sowar}"]`);
+            if (row) {
+                row.remove();
+                // Uncheck checkbox associated with removed surah
+                const checkbox = document.querySelector(`input[name="sowars"][value="${sowar}"]`);
+                if (checkbox) {
+                    checkbox.checked = false;
+                }
+            }
+        }
+
+        // Function to load selected surahs from local storage
+        function loadFromLocalStorage() {
+            const selectedSowars = JSON.parse(localStorage.getItem('selectedSowars'));
+            if (selectedSowars) {
+                for (const sowar of selectedSowars) {
+                    const checkbox = document.querySelector(`input[name="sowars"][value="${sowar}"]`);
+                    if (checkbox) {
+                        checkbox.checked = true;
+                    }
+                }
+            }
+            // Automatically add favorites when page loads
+            addToFavorites();
+        }
+
+        // Call loadFromLocalStorage function when the page loads
+        window.onload = function() {
+            loadFromLocalStorage();
+        };
+    </script>
     </html>
-    """
+    """ 
     return render_template_string(template)
 @mawaket_blueprint.route('/mawaket.html', methods=['GET', 'POST'])
 def mawaket():

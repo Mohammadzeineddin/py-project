@@ -193,7 +193,7 @@ def favorites():
                     </div>
                 {% endfor %}
                 <div style=" margin-left:50px;">
-                    <button type="submit" class="btn btn-primary mt-3" style="width:100px;margin-right:600px;height:50px;" onclick="addToFavorites()">حفظ</button>
+                    <button type="submit" class="btn btn-primary mt-3" style="width:100px;margin-right:300px;height:50px;" onclick="addToFavorites()">حفظ</button>
                 </div>
             </form>
             <table id="favoritesTable" class="table">

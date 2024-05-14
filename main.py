@@ -1,4 +1,5 @@
 from flask import Flask, render_template_string,request, session, redirect, url_for, Blueprint
+import os
 #define pages and main app
 favorites_blueprint = Blueprint('favorites_blueprint', __name__)
 mawaket_blueprint = Blueprint('mawaket_blueprint', __name__)
@@ -6,6 +7,7 @@ zekr_blueprint = Blueprint('zekr_blueprint', __name__)
 aswat_blueprint = Blueprint('aswat_blueprint', __name__)
 masb7a_blueprint = Blueprint('masb7a_blueprint', __name__)
 app = Flask(__name__)
+app.secret_key = os.urandom(24) 
 #define main route of homepage
 @app.route('/')
 

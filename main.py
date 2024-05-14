@@ -1,17 +1,16 @@
-from flask import Flask, render_template_string,render_template, request, session, redirect, url_for, Blueprint
-import os
-
+from flask import Flask, render_template_string,request, session, redirect, url_for, Blueprint
+#define pages and main app
 favorites_blueprint = Blueprint('favorites_blueprint', __name__)
 mawaket_blueprint = Blueprint('mawaket_blueprint', __name__)
 zekr_blueprint = Blueprint('zekr_blueprint', __name__)
 aswat_blueprint = Blueprint('aswat_blueprint', __name__)
 masb7a_blueprint = Blueprint('masb7a_blueprint', __name__)
 app = Flask(__name__)
-app.secret_key = os.urandom(24) 
-
+#define main route of homepage
 @app.route('/')
+
 def index():
-    selected_sowars = session.get('selected_sowars', [])
+    #homepage html code
     template = """
     <!DOCTYPE html>
     <html lang="en">
@@ -99,10 +98,12 @@ def index():
     </body>
     </html>
     """
-    return render_template_string(template, title="حقيبة المؤمن", selected_sowars=selected_sowars)
-
+    #render the homepage template
+    return render_template_string(template, title="حقيبة المؤمن")
+#favorites route
 @favorites_blueprint.route('/favorites.html', methods=['GET', 'POST'])
 def favorites():
+    #define selected sowars
     if request.method == 'POST':
         selected_sowars = request.form.getlist('sowars')
         session['selected_sowars'] = selected_sowars
@@ -299,15 +300,14 @@ def favorites():
     </script>
     </html>
     """ 
+    #render favorite page template
+    
     return render_template_string(template)
+
+# mawaket route
 @mawaket_blueprint.route('/mawaket.html', methods=['GET', 'POST'])
 def mawaket():
-    if request.method == 'POST':
-        selected_sowars = request.form.getlist('sowars')
-        session['selected_sowars'] = selected_sowars
-        return redirect(url_for('mawaket.html'))
-
-    selected_sowars = session.get('selected_sowars', [])
+    #mawaket html code
     template ="""
   <!DOCTYPE html>
 <html lang="en">
@@ -398,15 +398,13 @@ def mawaket():
 </html>
 
     """
+    #render mawaket
     return render_template_string(template)
+
+#define zekr route
 @zekr_blueprint.route('/zekr.html', methods=['GET', 'POST'])
 def zekr():
-    if request.method == 'POST':
-        selected_sowars = request.form.getlist('sowars')
-        session['selected_sowars'] = selected_sowars
-        return redirect(url_for('zekr.html'))
-        return render_template_string(template)
-    selected_sowars = session.get('selected_sowars', [])
+    #zekr html code
     template ="""
     <!DOCTYPE html>
 <html lang="en">
@@ -481,15 +479,13 @@ def zekr():
 </body>
 </html>
     """
+    #render zekr template
     return render_template_string(template)
+
+#define aswat route 
 @aswat_blueprint.route('/aswat.html', methods=['GET', 'POST'])
 def aswat():
-    if request.method == 'POST':
-        selected_sowars = request.form.getlist('sowars')
-        session['selected_sowars'] = selected_sowars
-        return redirect(url_for('aswat.html'))
-        return render_template_string(template)
-    selected_sowars = session.get('selected_sowars', [])
+    #aswat html code
     template ="""
     <!DOCTYPE html>
 <html lang="en">
@@ -573,15 +569,14 @@ def aswat():
 </html>
 
     """
+    #render aswat template
     return render_template_string(template)
+
+#define masb7a route
+
 @masb7a_blueprint.route('/masb7a.html', methods=['GET', 'POST'])
 def masb7a():
-    if request.method == 'POST':
-        selected_sowars = request.form.getlist('sowars')
-        session['selected_sowars'] = selected_sowars
-        return redirect(url_for('masb7a.html'))
-        return render_template_string(template)
-    selected_sowars = session.get('selected_sowars', [])
+    #masb7a html code
     template ="""
     <!DOCTYPE html>
 <html lang="en">
@@ -660,11 +655,15 @@ button:hover {
 </html>
 
     """
+    #render masb7a template
     return render_template_string(template)
+
+#register all pages blueprints in order to render
 app.register_blueprint(favorites_blueprint)
 app.register_blueprint(mawaket_blueprint)
 app.register_blueprint(zekr_blueprint)
 app.register_blueprint(aswat_blueprint)
 app.register_blueprint(masb7a_blueprint)
+# run main.py app 
 if __name__ == '__main__':
     app.run(debug=True)

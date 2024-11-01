@@ -72,7 +72,7 @@ def index():
             <h1 class="my-5">{{ title }}</h1>
             <div class="row justify-content-center">
                 <div class="col-md-4 mb-4">
-                    <a href=" mawaket.html " class="btn btn-primary btn-block">مواقيت الصلاة</a>
+                    <a href=" https://almanar.com.lb/salat.php " class="btn btn-primary btn-block">مواقيت الصلاة</a>
                 </div>
             </div>
             <div class="row justify-content-center">
